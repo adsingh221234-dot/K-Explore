@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K Explore — Discover Experiences. Explore Events.</title>
+  <meta name="description" content="K Explore is a modern event discovery platform. Find and register for technology, music, sports, workshops and cultural events near you." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%237c3aed'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='bold' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">K</span>
+        <span class="logo__text">K <span>Explore</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__content container">
+      <span class="hero__badge">Your gateway to unforgettable experiences</span>
+      <h1>Discover Experiences. <span class="highlight">Explore Events.</span></h1>
+      <p>From cutting-edge tech summits to live music nights, thrilling sports and vibrant cultural festivals — find events that move you and reserve your spot in seconds.</p>
+      <div class="hero__actions">
+        <button class="btn btn--primary" id="exploreBtn">Explore Events</button>
+        <a class="btn" href="#about">Learn More</a>
+      </div>
+
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="Search events by name, venue or category..." aria-label="Search events" />
+        <button class="btn btn--primary" id="searchBtn">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section id="events">
+    <div class="container">
+      <div class="section-head">
+        <h2>Upcoming Events</h2>
+        <p>Browse what's happening soon and grab your spot before they fill up.</p>
+      </div>
+
+      <div class="category-pills" id="categoryPills"></div>
+      <div class="events-grid" id="eventsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Popular Categories -->
+  <section id="categories" class="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>Popular Categories</h2>
+        <p>Explore events by the experiences you love most.</p>
+      </div>
+      <div class="events-grid">
+        <article class="event-card">
+          <div class="event-card__image">
+            <img src="https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Technology events" loading="lazy" />
+            <span class="event-card__badge">Technology</span>
+          </div>
+          <div class="event-card__body">
+            <h3>Tech & Innovation</h3>
+            <p class="event-card__desc">Summits, hackathons and meetups for developers, founders and tech enthusiasts shaping the future.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">AI · Web · Cloud</span>
+              <a class="btn btn--small" href="#events">Browse</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-card__image">
+            <img src="https://images.pexels.com/photos/167605/pexels-photo-167605.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Music events" loading="lazy" />
+            <span class="event-card__badge">Music</span>
+          </div>
+          <div class="event-card__body">
+            <h3>Live Music</h3>
+            <p class="event-card__desc">Festivals, acoustic sessions and headline concerts featuring artists across every genre.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">Pop · Indie · EDM</span>
+              <a class="btn btn--small" href="#events">Browse</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-card__image">
+            <img src="https://images.pexels.com/photos/33210166/pexels-photo-33210166.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Sports events" loading="lazy" />
+            <span class="event-card__badge">Sports</span>
+          </div>
+          <div class="event-card__body">
+            <h3>Sports & Action</h3>
+            <p class="event-card__desc">Marathons, championships and live matches for athletes and fans who love the thrill of the game.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">Run · Football</span>
+              <a class="btn btn--small" href="#events">Browse</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-card__image">
+            <img src="https://images.pexels.com/photos/40259577/pexels-photo-40259577.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Workshop events" loading="lazy" />
+            <span class="event-card__badge">Workshops</span>
+          </div>
+          <div class="event-card__body">
+            <h3>Workshops & Learning</h3>
+            <p class="event-card__desc">Hands-on masterclasses and bootcamps to sharpen your skills in design, speaking and beyond.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">Design · Speaking</span>
+              <a class="btn btn--small" href="#events">Browse</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-card__image">
+            <img src="https://images.pexels.com/photos/39979066/pexels-photo-39979066.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Cultural events" loading="lazy" />
+            <span class="event-card__badge">Cultural Events</span>
+          </div>
+          <div class="event-card__body">
+            <h3>Cultural Celebrations</h3>
+            <p class="event-card__desc">Festivals of lights, heritage gatherings and traditional performances celebrating world cultures.</p>
+            <div class="event-card__footer">
+              <span class="event-card__price">Heritage · Festivals</span>
+              <a class="btn btn--small" href="#events">Browse</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About K Explore</h2>
+        <p>Your front-row seat to the experiences that matter.</p>
+      </div>
+      <div class="about__grid">
+        <div class="about__text">
+          <p>K Explore is a modern event discovery platform built to connect people with the experiences they care about. Whether you're chasing the energy of a live concert, the buzz of a tech summit or the colors of a cultural festival, we make finding and registering for events effortless.</p>
+          <p>Every event listing includes full details, a live countdown and a one-tap registration flow — so you never miss a moment that matters.</p>
+          <div class="about__stats">
+            <div class="stat">
+              <div class="stat__num">10+</div>
+              <div class="stat__label">Curated Events</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">5</div>
+              <div class="stat__label">Categories</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">100%</div>
+              <div class="stat__label">Instant Registration</div>
+            </div>
+          </div>
+        </div>
+        <div class="about__image">
+          <img src="https://images.pexels.com/photos/5192289/pexels-photo-5192289.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="People enjoying a live event" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>Get in Touch</h2>
+        <p>Have a question or want to list your event? We'd love to hear from you.</p>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__info">
+          <div class="contact__info-item">
+            <span>📧</span>
+            <div>
+              <strong>Email</strong>
+              <p>hello@kexplore.com</p>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span>📞</span>
+            <div>
+              <strong>Phone</strong>
+              <p>+91 (555) 012-3456</p>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span>📍</span>
+            <div>
+              <strong>Office</strong>
+              <p>KIIT BHUBANESWAR</p>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span>🕑</span>
+            <div>
+              <strong>Hours</strong>
+              <p>Mon–Fri, 9:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="form-card" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="How can we help?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Send Message</button>
+          <p class="form-success" id="contactSuccess"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__about">
+          <a href="index.html" class="logo">
+            <span class="logo__mark">K</span>
+            <span class="logo__text">K <span>Explore</span></span>
+          </a>
+          <p>Discover experiences. Explore events. K Explore connects you with the moments worth remembering.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <a href="#events">Events</a>
+          <a href="#categories">Categories</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer__col">
+          <h4>Account</h4>
+          <a href="register.html">Register</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        © 2026 K Explore. Built for event lovers everywhere.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/events.js"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
